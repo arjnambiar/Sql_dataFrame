@@ -5,6 +5,11 @@ import numpy as np
 
 fd_returns = open('C:\\Users\\usr\\Desktop\\customers.sql', 'r')
 
+db = MySQLdb.connect(host="your host name",    # your host, usually localhost
+                     user="username",         # your username
+                     passwd="password",  # your password
+                     db="MART") 
+cursor = db.cursor(MySQLdb.cursors.DictCursor)
 
 def sqlDataframe(file_obj):
     sqlFile_returns = file_obj.read()
